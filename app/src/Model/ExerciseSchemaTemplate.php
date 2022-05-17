@@ -9,7 +9,7 @@ class ExerciseSchemaTemplate extends DataObject
     ];
 
     private static $many_many = [
-        "Exercises" => Exercise::class,
+        "ExerciseSetGroup" => ExerciseSetGroup::class,
         "Tags" => Tag::class
     ];
 

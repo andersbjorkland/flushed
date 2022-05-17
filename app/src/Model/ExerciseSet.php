@@ -7,10 +7,11 @@ class ExerciseSet extends DataObject
     private static $db = [
         'Weight' => 'Decimal',
         'Reps' => 'Int',
-        'PerformedReps' => 'Int'
+        'PerformedReps' => 'Int',
+        'Sort' => 'Int'
     ];
 
     private static $has_one = [
-        'Exercise' => Exercise::class
+        'Exercise' => ExerciseSetGroup::class
     ];
 }
