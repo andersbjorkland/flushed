@@ -3,15 +3,27 @@
     "type": "silverstripe-recipe",
     "description": "The SilverStripe Framework Installer",
     "require": {
-        "php": "^7.3 || ^8.0",
-        "silverstripe/recipe-plugin": "^1.2",
-        "silverstripe/recipe-cms": "~4.10.0@stable",
+        "php": "^7.4 || ^8.0",
+        "silverstripe/recipe-plugin": "^1.5",
         "silverstripe-themes/simple": "~3.2.0",
         "silverstripe/login-forms": "~4.6.0@stable",
-        "symbiote/silverstripe-gridfieldextensions": "^3"
+        "symbiote/silverstripe-gridfieldextensions": "^3",
+        "silverstripe/admin": "~1.11.0@beta",
+        "silverstripe/asset-admin": "~1.11.0@beta",
+        "silverstripe/campaign-admin": "~1.11.0@beta",
+        "silverstripe/cms": "~4.11.0@beta",
+        "silverstripe/errorpage": "~1.11.0@beta",
+        "silverstripe/graphql": "~4.0.0@beta",
+        "silverstripe/recipe-core": "~4.11.0@beta",
+        "silverstripe/reports": "~4.11.0@beta",
+        "silverstripe/session-manager": "~1.3.0@beta",
+        "silverstripe/siteconfig": "~4.11.0@beta",
+        "silverstripe/versioned": "~1.11.0@beta",
+        "silverstripe/versioned-admin": "~1.11.0@beta"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^9.5",
+        "silverstripe/graphql-devtools": "1.x-dev"
     },
     "extra": {
         "resources-dir": "_resources",
@@ -27,7 +39,23 @@
             ".htaccess",
             "index.php",
             "web.config"
-        ]
+        ],
+        "project-dependencies-installed": {
+            "php": "^7.4 || ^8.0",
+            "silverstripe/admin": "~1.11.0@beta",
+            "silverstripe/asset-admin": "~1.11.0@beta",
+            "silverstripe/campaign-admin": "~1.11.0@beta",
+            "silverstripe/cms": "~4.11.0@beta",
+            "silverstripe/errorpage": "~1.11.0@beta",
+            "silverstripe/graphql": "~3.8.0@stable || ~4.0.0@beta",
+            "silverstripe/recipe-core": "~4.11.0@beta",
+            "silverstripe/recipe-plugin": "^1.5",
+            "silverstripe/reports": "~4.11.0@beta",
+            "silverstripe/session-manager": "~1.3.0@beta",
+            "silverstripe/siteconfig": "~4.11.0@beta",
+            "silverstripe/versioned": "~1.11.0@beta",
+            "silverstripe/versioned-admin": "~1.11.0@beta"
+        }
     },
     "config": {
         "process-timeout": 600,
@@ -38,5 +66,8 @@
         }
     },
     "prefer-stable": true,
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "provide": {
+        "silverstripe/recipe-cms": "4.11.0-beta2"
+    }
 }

@@ -1,0 +1,35 @@
+---
+Name: gql
+After: framework/_config/routes#coreroutes
+---
+SilverStripe\GraphQL\Controller:
+  cors:
+    Enabled: true
+    Allow-Origin: "*"
+    Allow-Methods: "GET, PUT, POST, OPTIONS"
+    Allow-Headers: "*"
+
+SilverStripe\Control\Director:
+  rules:
+    "graphql": '%$SilverStripe\GraphQL\Controller.default'
+SilverStripe\GraphQL\Schema\Schema:
+  schemas:
+    default:
+      src:
+        - app/_graphql
+
+---
+Name: gql_middlewares
+after: graphql/_config/middlewares#graphql-middlewares
+---
+SilverStripe\Core\Injector\Injector:
+  SilverStripe\GraphQL\QueryHandler\QueryHandlerInterface.default:
+    class: SilverStripe\GraphQL\QueryHandler\QueryHandler
+    properties:
+      Middlewares:
+        csrf: false
+
+SilverStripe\GraphQL\Auth\Handler:
+  authenticators:
+    - class: SilverStripe\GraphQL\Auth\BasicAuthAuthenticator
+      priority: 10

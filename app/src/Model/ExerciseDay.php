@@ -65,4 +65,13 @@ class ExerciseDay extends DataObject
 
         return $result;
     }
+
+    public function getCMSFields()
+    {
+        $fields = parent::getCMSFields();
+
+        $fields->removeByName('ExerciseSchemaID');
+
+        return $fields;
+    }
 }
