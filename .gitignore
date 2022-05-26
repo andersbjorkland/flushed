@@ -1,4 +1,5 @@
 /silverstripe-cache/
+/.graphql-generated/
 /.env
 /vendor/
 /themes/simple/
